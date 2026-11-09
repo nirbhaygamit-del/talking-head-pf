@@ -1,0 +1,193 @@
+:root {
+    --bg-color: #0b0f19;
+    --card-bg: #131826;
+    --primary-color: #b0e0e6; /* Powder Blue */
+    --primary-hover: #93c4cb;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: #1e293b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* Header & Hero */
+header {
+    padding: 60px 20px 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(176, 224, 230, 0.1);
+    color: var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    border: 1px solid rgba(176, 224, 230, 0.2);
+}
+
+header h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Category Label */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px 40px;
+}
+
+.filter-btn {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: #0b0f19;
+    padding: 8px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Portfolio Grid - Optimized for Vertical Layouts */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.video-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px rgba(176, 224, 230, 0.2);
+    border-color: rgba(176, 224, 230, 0.4);
+}
+
+/* 9:16 Vertical Video Aspect Ratio Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* CHANGED FROM 'cover' TO 'contain' SO THE FULL VIDEO IS ALWAYS VISIBLE */
+    object-fit: contain; 
+}
+
+.video-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.video-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.video-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.video-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 600px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.contact-section p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #0b0f19;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+@media (max-width: 600px) {
+    header h1 { font-size: 2.1rem; }
+    .portfolio-grid { grid-template-columns: 1fr; max-width: 380px; }
+}
